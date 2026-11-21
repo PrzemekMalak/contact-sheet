@@ -1,0 +1,8 @@
+{{ define "main" }}
+<section class="home-intro">
+  <h1>{{ site.Title }}</h1>
+  <p>{{ .RawContent | markdownify }}</p>
+</section>
+{{ $photos := cond (eq site.Params.homeMode "featured") (where hugo.Data.photos "featured" true) (where hugo.Data.photos "albums" "intersect" (slice site.Params.homeAlbum)) }}
+{{ partial "album-grid.html" (dict "photos" $photos "showDate" true) }}
+{{ end }}

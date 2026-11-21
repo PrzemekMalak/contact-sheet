@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ $p := .Params.photo }}
+{{ $original := $p.original }}
+{{ if not (hasPrefix $original "http") }}{{ with resources.Get $original }}{{ $original = .Permalink }}{{ end }}{{ end }}
+<article class="photo-page">
+  {{ with resources.Get $p.preview }}
+  <a href="{{ $original }}"><img src="{{ .RelPermalink }}" width="{{ $p.pw }}" height="{{ $p.ph }}" alt="{{ $p.caption }}"></a>
+  {{ end }}
+  <div class="photo-meta">
+    {{ with $p.caption }}<h1>{{ . }}</h1>{{ end }}
+    {{ with $p.taken }}<p class="photo-date">{{ (time .).Format "2 January 2006" }}</p>{{ end }}
+    {{ with partial "photo-exif.html" $p }}<p class="photo-exif">{{ . }}</p>{{ end }}
+    {{ with $p.albums }}
+    {{ $albums := (site.GetPage "/albums").Pages }}
+    <p class="photo-albums">Albums:
+      {{ range $i, $name := . }}{{ if $i }}, {{ end }}{{ with index (where $albums "Params.gallery" $name) 0 }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ else }}{{ $name }}{{ end }}{{ end }}
+    </p>
+    {{ end }}
+    <p class="photo-links"><a href="{{ $original }}">Full size</a>{{ with partialCached "photo-jpg.html" $p $p.id }} · <a href="{{ .Permalink }}">Image link</a>{{ end }}</p>
+  </div>
+</article>
+{{ end }}

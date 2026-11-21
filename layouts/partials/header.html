@@ -1,0 +1,8 @@
+<header class="site-header">
+  <a class="brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
+  <nav class="site-nav">
+    {{ range site.Menus.main }}
+      <a href="{{ .PageRef | relURL }}"{{ if $.IsMenuCurrent "main" . }} class="active"{{ end }}>{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>

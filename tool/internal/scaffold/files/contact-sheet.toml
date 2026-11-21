@@ -1,0 +1,35 @@
+# Settings for the photo tool.
+
+[project]
+assets_dir = "assets/gallery"
+photos_index = "data/photos.json"
+albums_dir = "content/albums"
+tags_dir = "content/tags"
+
+[images]
+thumb_max_edge = 400
+preview_max_edge = 1600
+webp_quality = 82
+
+# Full-resolution originals. With bucket empty (local mode) nothing is
+# uploaded and the lightbox shows the 1600px preview. To serve originals from
+# S3 + CloudFront, deploy contact-sheet's infra/ and fill these in.
+[s3]
+bucket = ""
+originals_prefix = "originals"
+cdn_base = ""
+region = "us-east-1"
+# profile = ""   # AWS shared-config profile holding the upload key
+
+# AWS stacks (optional). `photo cdk diff` / `photo cdk deploy <stack>` run
+# contact-sheet's CDK app from a local clone of the repo with these settings,
+# so they stay in your site repo. See infra/README.md in contact-sheet.
+# [cdk]
+# infra = "../contact-sheet/infra"   # your clone's infra/ (relative to this file, absolute, or ~/...)
+# profile = "admin"                  # an AWS profile that can deploy, not the [s3] upload key
+#
+# [cdk.context]                      # passed to CDK as -c key=value
+# site_name = "example.com"
+# stack_prefix = "PhotoSite"         # don't change it once deployed
+# cdn_domain = "cdn.example.com"
+# budget_email = "you@example.com"   # monthly cost alert (see infra/README.md)

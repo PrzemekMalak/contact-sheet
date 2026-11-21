@@ -1,0 +1,6 @@
+# Theme/module configuration. Sites set their own options in their hugo.toml.
+[module]
+  [module.hugoVersion]
+    extended = true
+    # The version the theme is tested with (CI and the amplify.yml template).
+    min = "0.166.0"

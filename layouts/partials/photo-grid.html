@@ -1,0 +1,24 @@
+{{- $photos := .photos -}}
+{{- $showDate := .showDate -}}
+<div class="grid">
+  {{- range $photos -}}
+    {{- $ratio := div (float .width) (float .height) -}}
+    {{- $caption := .caption -}}
+    {{- $thumb := resources.Get .thumb -}}
+    <a class="ph" href="{{ (resources.Get .preview).RelPermalink }}"
+       style="flex-grow: {{ mul $ratio 100 }}; flex-basis: {{ mul $ratio 220 }}px"
+       data-page="{{ printf "/p/%s/" .id | absURL }}"
+       {{ with partialCached "photo-jpg.html" . .id }}data-image="{{ .Permalink }}"{{ end }}
+       data-pswp-width="{{ .pw }}" data-pswp-height="{{ .ph }}"
+       data-original="{{ if hasPrefix .original "http" }}{{ .original }}{{ else }}{{ (resources.Get .original).RelPermalink }}{{ end }}"
+       {{ with .caption }}data-caption="{{ . }}"{{ end }}
+       {{ with .exif }}data-exif="{{ jsonify . }}"{{ end }}
+       {{ with .exif }}{{ with .camera }}data-camera-gear="{{ trim (replaceRE "[^a-z0-9]+" "-" (lower .)) "-" }}"{{ end }}{{ end }}
+       {{ with .exif }}{{ with .lens }}data-lens-gear="{{ trim (replaceRE "[^a-z0-9]+" "-" (lower .)) "-" }}"{{ end }}{{ end }}
+       {{ with .exif }}{{ with .camera }}data-camera-name="{{ partialCached "gear-name.html" . . }}"{{ end }}{{ end }}
+       {{ with .exif }}{{ with .lens }}data-lens-name="{{ partialCached "gear-name.html" . . }}"{{ end }}{{ end }}>
+      {{ with $thumb }}<img loading="lazy" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $caption }}">{{ end }}
+      {{ if and $showDate .taken }}<span class="ph-date">{{ (time .taken).Format "2 Jan 2006" }}</span>{{ end }}
+    </a>
+  {{- end -}}
+</div>

@@ -1,0 +1,66 @@
+:root { color-scheme: dark; }
+body { margin: 0; background: #0d0d0f; color: #e8e8ea; font-family: system-ui, sans-serif; }
+a { color: inherit; }
+.site-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; }
+.brand { font-weight: 600; text-decoration: none; letter-spacing: .02em; }
+.site-nav a { margin-left: 1rem; text-decoration: none; opacity: .75; }
+.site-nav a.active, .site-nav a:hover { opacity: 1; }
+.site-main { padding: 0 1.25rem; max-width: 1400px; margin: 0 auto; }
+.home-intro { padding: 2rem 0; }
+.grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.grid::after { content: ""; flex-grow: 1e10; }
+.ph { display: block; position: relative; overflow: hidden; }
+.ph img { display: block; width: 100%; height: 220px; object-fit: cover; vertical-align: bottom; }
+.ph-date { position: absolute; left: 0; bottom: 0; right: 0; padding: 1.5rem .5rem .4rem; color: #fff; font-size: .78rem; line-height: 1; letter-spacing: .02em; text-shadow: 0 1px 2px rgba(0,0,0,.6); background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0)); pointer-events: none; }
+.site-footer { padding: 3rem 1.25rem; opacity: .6; font-size: .9rem; }
+@media (max-width: 640px) { .ph img { height: 160px; } }
+.albums { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+.album-card { text-decoration: none; display: block; }
+.album-card img { width: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: 4px; }
+.album-meta { display: flex; justify-content: space-between; padding: .5rem .1rem; font-size: .9rem; }
+.album-meta span { opacity: .6; }
+.album-header { padding: 1.5rem 0; }
+.album-date { opacity: .6; margin-top: -.5rem; }
+.pswp-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: .75rem 1rem; text-align: center; background: linear-gradient(transparent, rgba(0,0,0,.7)); font-size: .9rem; }
+.pswp-exif { display: block; opacity: .7; font-size: .8rem; margin-top: .25rem; }
+.pswp__button--original, .pswp__button--link, .pswp__button--img { width: auto; padding: 0 .75rem; font-size: .85rem; color: #fff; }
+.post-list { list-style: none; padding: 0; }
+.post-list li { display: flex; justify-content: space-between; padding: .6rem 0; border-bottom: 1px solid #222; }
+.post-list a { text-decoration: none; }
+.post-date { opacity: .6; font-size: .9rem; }
+.post { max-width: 760px; }
+.post .grid { margin: 1.5rem 0; }
+.tag-cloud { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.tag-cloud a { text-decoration: none; padding: .3rem .7rem; border: 1px solid #333; border-radius: 999px; font-size: .9rem; }
+.tag-cloud a span { opacity: .5; }
+.page { max-width: 760px; line-height: 1.7; }
+h1 { font-weight: 600; letter-spacing: -.01em; }
+img { max-width: 100%; }
+@media (max-width: 640px) {
+  .site-header { flex-direction: column; gap: .5rem; align-items: flex-start; }
+  .site-nav a { margin: 0 .8rem 0 0; }
+}
+.photo-page { padding: 1.5rem 0; }
+.photo-page img { display: block; max-width: 100%; height: auto; max-height: 85vh; margin: 0 auto; border-radius: 4px; }
+.photo-meta { max-width: 60rem; margin: 1rem auto 0; }
+.photo-meta h1 { margin: 0 0 .25rem; font-size: 1.3rem; }
+.photo-date, .photo-exif, .photo-albums { opacity: .7; margin: .25rem 0; font-size: .9rem; }
+
+/* Gear: index of cameras, lenses and setups; gear page header */
+.gear-icon { width: 1em; height: 1em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; opacity: .7; }
+.gear-index h2 { display: flex; align-items: center; gap: .5rem; font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; opacity: .65; margin: 2rem 0 .75rem; }
+.gear-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .25rem 1.5rem; }
+.gear-row { display: flex; align-items: center; gap: .75rem; padding: .375rem; border-radius: 6px; text-decoration: none; }
+.gear-row:hover { background: #18191c; }
+.gear-thumb { width: 56px; height: 56px; object-fit: cover; border-radius: 4px; flex: none; }
+.gear-text { display: flex; flex-direction: column; min-width: 0; }
+.gear-name { display: flex; align-items: center; gap: .4rem; }
+.gear-meta { font-size: .8rem; opacity: .6; }
+@media (max-width: 640px) { .gear-list { grid-template-columns: 1fr; } }
+.gear-kind { display: flex; align-items: center; gap: .4rem; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; opacity: .65; }
+.gear-head h1 { margin: .35rem 0 .25rem; }
+.gear-head .gear-meta { margin: 0; font-size: .9rem; }
+.gear-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.gear-chip { display: inline-flex; align-items: center; gap: .4rem; padding: .3rem .75rem; border-radius: 999px; background: #1a1b1f; font-size: .85rem; text-decoration: none; }
+.gear-chip:hover { background: #24262b; }
+.gear-count { opacity: .55; }

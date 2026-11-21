@@ -1,0 +1,12 @@
+name = "Contact Sheet"
+license = "MIT"
+licenselink = "https://github.com/PrzemekMalak/contact-sheet/blob/main/LICENSE"
+description = "Photo portfolio and blog: justified photo grids, PhotoSwipe lightbox, albums, tags, gear pages and per-photo pages, managed by a small Go CLI/GUI."
+homepage = "https://github.com/PrzemekMalak/contact-sheet"
+tags = ["gallery", "photography", "portfolio", "blog", "photoswipe", "responsive"]
+features = ["albums", "tags", "EXIF", "lightbox", "Open Graph", "per-photo pages"]
+min_version = "0.166.0"
+
+[author]
+  name = "Przemek Malak"
+  homepage = "https://github.com/PrzemekMalak"

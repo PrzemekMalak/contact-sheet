@@ -1,0 +1,7 @@
+{{- /* Display name of a camera or lens: the title of its /gear/<slug>/ page
+       (cleaned by the photo tool, editable by the owner), else the raw EXIF
+       value. Input: the raw value. Call with partialCached keyed by the value. */ -}}
+{{- $name := . -}}
+{{- $slug := trim (replaceRE "[^a-z0-9]+" "-" (lower .)) "-" -}}
+{{- with $slug -}}{{- with site.GetPage (printf "/gear/%s" .) -}}{{- with .Title -}}{{- $name = . -}}{{- end -}}{{- end -}}{{- end -}}
+{{- return $name -}}

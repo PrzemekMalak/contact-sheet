@@ -1,0 +1,5 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ $featured := where hugo.Data.photos "featured" true }}
+{{ with $featured }}{{ partial "photo-grid.html" (dict "photos" .) }}{{ end }}
+{{ end }}

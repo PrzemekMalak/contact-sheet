@@ -1,0 +1,24 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - export HUGO_VERSION=0.166.0
+        - curl -fsSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" -o /tmp/hugo.tar.gz
+        - tar -xzf /tmp/hugo.tar.gz -C /tmp hugo
+        - /tmp/hugo version
+        # Go is needed to fetch the theme as a Hugo Module (go.mod / go.sum).
+        - export GO_VERSION=1.27.1
+        - curl -fsSL "https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz" -o /tmp/go.tar.gz
+        - tar -xzf /tmp/go.tar.gz -C /tmp
+        - /tmp/go/bin/go version
+    build:
+      commands:
+        - PATH="/tmp/go/bin:$PATH" /tmp/hugo --minify --gc
+  artifacts:
+    baseDirectory: public
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - resources/**

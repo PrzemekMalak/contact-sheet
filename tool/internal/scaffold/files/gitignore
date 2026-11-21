@@ -1,0 +1,6 @@
+/public/
+/resources/
+.hugo_build.lock
+**/assets/jsconfig.json
+.photo-pending-deletes.json
+.DS_Store

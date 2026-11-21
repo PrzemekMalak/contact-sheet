@@ -1,0 +1,553 @@
+[
+  {
+    "id": "alpine-dawn",
+    "thumb": "gallery/alpine-dawn-thumb.webp",
+    "preview": "gallery/alpine-dawn-preview.webp",
+    "original": "gallery/alpine-dawn-preview.webp",
+    "width": 3000,
+    "height": 2000,
+    "pw": 1600,
+    "ph": 1067,
+    "caption": "First light over the range",
+    "tags": [
+      "mountains",
+      "landscape"
+    ],
+    "albums": [
+      "mountains"
+    ],
+    "featured": true,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 24-70mm F2.8",
+      "aperture": "f/8",
+      "shutter": "1/125",
+      "iso": 100,
+      "focal": "35mm"
+    },
+    "taken": "2026-06-14T05:12:09"
+  },
+  {
+    "id": "bridge-lights",
+    "thumb": "gallery/bridge-lights-thumb.webp",
+    "preview": "gallery/bridge-lights-preview.webp",
+    "original": "gallery/bridge-lights-preview.webp",
+    "width": 3000,
+    "height": 1688,
+    "pw": 1600,
+    "ph": 900,
+    "caption": "",
+    "tags": [
+      "city"
+    ],
+    "albums": [
+      "city"
+    ],
+    "featured": false,
+    "exif": {
+      "camera": "ACME X2",
+      "lens": "ACME 35mm F1.8",
+      "aperture": "f/1.8",
+      "shutter": "1/30",
+      "iso": 1600,
+      "focal": "35mm"
+    },
+    "taken": "2026-09-03T21:30:55"
+  },
+  {
+    "id": "dune-shadows",
+    "thumb": "gallery/dune-shadows-thumb.webp",
+    "preview": "gallery/dune-shadows-preview.webp",
+    "original": "gallery/dune-shadows-preview.webp",
+    "width": 2400,
+    "height": 3000,
+    "pw": 1280,
+    "ph": 1600,
+    "caption": "",
+    "tags": [
+      "desert"
+    ],
+    "albums": [
+      "desert"
+    ],
+    "featured": true,
+    "exif": {
+      "camera": "ACME X2",
+      "lens": "ACME 35mm F1.8",
+      "aperture": "f/8",
+      "shutter": "1/640",
+      "iso": 100,
+      "focal": "35mm"
+    },
+    "taken": "2026-04-04T07:05:00"
+  },
+  {
+    "id": "first-light",
+    "thumb": "gallery/first-light-thumb.webp",
+    "preview": "gallery/first-light-preview.webp",
+    "original": "gallery/first-light-preview.webp",
+    "width": 3000,
+    "height": 2000,
+    "pw": 1600,
+    "ph": 1067,
+    "caption": "",
+    "tags": [
+      "mountains",
+      "landscape"
+    ],
+    "albums": [
+      "mountains"
+    ],
+    "featured": true,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 24-70mm F2.8",
+      "aperture": "f/8",
+      "shutter": "1/100",
+      "iso": 100,
+      "focal": "24mm"
+    },
+    "taken": "2026-06-17T05:20:00"
+  },
+  {
+    "id": "fog-bank",
+    "thumb": "gallery/fog-bank-thumb.webp",
+    "preview": "gallery/fog-bank-preview.webp",
+    "original": "gallery/fog-bank-preview.webp",
+    "width": 3000,
+    "height": 1688,
+    "pw": 1600,
+    "ph": 900,
+    "caption": "",
+    "tags": [
+      "landscape"
+    ],
+    "albums": [
+      "mountains"
+    ],
+    "featured": false,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 100-400mm F4.5-5.6",
+      "aperture": "f/8",
+      "shutter": "1/250",
+      "iso": 200,
+      "focal": "180mm"
+    },
+    "taken": "2026-06-18T06:40:00"
+  },
+  {
+    "id": "golden-valley",
+    "thumb": "gallery/golden-valley-thumb.webp",
+    "preview": "gallery/golden-valley-preview.webp",
+    "original": "gallery/golden-valley-preview.webp",
+    "width": 3000,
+    "height": 2000,
+    "pw": 1600,
+    "ph": 1067,
+    "caption": "",
+    "tags": [
+      "autumn",
+      "landscape"
+    ],
+    "albums": [
+      "mountains"
+    ],
+    "featured": true,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 24-70mm F2.8",
+      "aperture": "f/11",
+      "shutter": "1/160",
+      "iso": 100,
+      "focal": "35mm"
+    },
+    "taken": "2026-10-06T08:10:00"
+  },
+  {
+    "id": "harbour-dusk",
+    "thumb": "gallery/harbour-dusk-thumb.webp",
+    "preview": "gallery/harbour-dusk-preview.webp",
+    "original": "gallery/harbour-dusk-preview.webp",
+    "width": 3000,
+    "height": 2000,
+    "pw": 1600,
+    "ph": 1067,
+    "caption": "Boats coming home",
+    "tags": [
+      "city",
+      "water"
+    ],
+    "albums": [
+      "city"
+    ],
+    "featured": true,
+    "exif": {
+      "camera": "ACME X2",
+      "lens": "ACME 35mm F1.8",
+      "aperture": "f/4",
+      "shutter": "1/60",
+      "iso": 400,
+      "focal": "35mm"
+    },
+    "taken": "2026-09-02T19:48:31"
+  },
+  {
+    "id": "heron",
+    "thumb": "gallery/heron-thumb.webp",
+    "preview": "gallery/heron-preview.webp",
+    "original": "gallery/heron-preview.webp",
+    "width": 3000,
+    "height": 2000,
+    "pw": 1600,
+    "ph": 1067,
+    "caption": "Grey heron at the river",
+    "tags": [
+      "bird"
+    ],
+    "albums": [],
+    "featured": false,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 100-400mm F4.5-5.6",
+      "aperture": "f/5.6",
+      "shutter": "1/1000",
+      "iso": 800,
+      "focal": "400mm"
+    },
+    "taken": "2026-10-11T08:22:03"
+  },
+  {
+    "id": "high-pass",
+    "thumb": "gallery/high-pass-thumb.webp",
+    "preview": "gallery/high-pass-preview.webp",
+    "original": "gallery/high-pass-preview.webp",
+    "width": 2000,
+    "height": 3000,
+    "pw": 1067,
+    "ph": 1600,
+    "caption": "",
+    "tags": [
+      "mountains"
+    ],
+    "albums": [
+      "mountains"
+    ],
+    "featured": false,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 24-70mm F2.8",
+      "aperture": "f/11",
+      "shutter": "1/400",
+      "iso": 100,
+      "focal": "50mm"
+    },
+    "taken": "2026-06-17T12:10:00"
+  },
+  {
+    "id": "lighthouse-dusk",
+    "thumb": "gallery/lighthouse-dusk-thumb.webp",
+    "preview": "gallery/lighthouse-dusk-preview.webp",
+    "original": "gallery/lighthouse-dusk-preview.webp",
+    "width": 2000,
+    "height": 3000,
+    "pw": 1067,
+    "ph": 1600,
+    "caption": "",
+    "tags": [
+      "water",
+      "coast"
+    ],
+    "albums": [
+      "coast"
+    ],
+    "featured": true,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 100-400mm F4.5-5.6",
+      "aperture": "f/6.3",
+      "shutter": "1/125",
+      "iso": 800,
+      "focal": "250mm"
+    },
+    "taken": "2026-08-12T20:40:00"
+  },
+  {
+    "id": "low-tide",
+    "thumb": "gallery/low-tide-thumb.webp",
+    "preview": "gallery/low-tide-preview.webp",
+    "original": "gallery/low-tide-preview.webp",
+    "width": 3000,
+    "height": 2000,
+    "pw": 1600,
+    "ph": 1067,
+    "caption": "",
+    "tags": [
+      "water",
+      "coast"
+    ],
+    "albums": [
+      "coast"
+    ],
+    "featured": true,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 24-70mm F2.8",
+      "aperture": "f/8",
+      "shutter": "1/320",
+      "iso": 100,
+      "focal": "40mm"
+    },
+    "taken": "2026-08-12T09:15:00"
+  },
+  {
+    "id": "maple-ridge",
+    "thumb": "gallery/maple-ridge-thumb.webp",
+    "preview": "gallery/maple-ridge-preview.webp",
+    "original": "gallery/maple-ridge-preview.webp",
+    "width": 3000,
+    "height": 2250,
+    "pw": 1600,
+    "ph": 1200,
+    "caption": "",
+    "tags": [
+      "autumn",
+      "mountains"
+    ],
+    "albums": [
+      "mountains"
+    ],
+    "featured": true,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 100-400mm F4.5-5.6",
+      "aperture": "f/8",
+      "shutter": "1/320",
+      "iso": 200,
+      "focal": "135mm"
+    },
+    "taken": "2026-10-05T16:20:00"
+  },
+  {
+    "id": "milky-way",
+    "thumb": "gallery/milky-way-thumb.webp",
+    "preview": "gallery/milky-way-preview.webp",
+    "original": "gallery/milky-way-preview.webp",
+    "width": 3000,
+    "height": 2000,
+    "pw": 1600,
+    "ph": 1067,
+    "caption": "",
+    "tags": [
+      "night",
+      "mountains"
+    ],
+    "albums": [
+      "mountains"
+    ],
+    "featured": true,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 24-70mm F2.8",
+      "aperture": "f/2.8",
+      "shutter": "25",
+      "iso": 3200,
+      "focal": "24mm"
+    },
+    "taken": "2026-06-19T01:30:00"
+  },
+  {
+    "id": "old-town",
+    "thumb": "gallery/old-town-thumb.webp",
+    "preview": "gallery/old-town-preview.webp",
+    "original": "gallery/old-town-preview.webp",
+    "width": 2000,
+    "height": 3000,
+    "pw": 1067,
+    "ph": 1600,
+    "caption": "",
+    "tags": [
+      "city"
+    ],
+    "albums": [
+      "city"
+    ],
+    "featured": false,
+    "exif": {
+      "camera": "ACME X2",
+      "lens": "ACME 35mm F1.8",
+      "aperture": "f/5.6",
+      "shutter": "1/320",
+      "iso": 100,
+      "focal": "35mm"
+    },
+    "taken": "2026-09-03T10:05:17"
+  },
+  {
+    "id": "red-rocks",
+    "thumb": "gallery/red-rocks-thumb.webp",
+    "preview": "gallery/red-rocks-preview.webp",
+    "original": "gallery/red-rocks-preview.webp",
+    "width": 3000,
+    "height": 2000,
+    "pw": 1600,
+    "ph": 1067,
+    "caption": "",
+    "tags": [
+      "desert",
+      "landscape"
+    ],
+    "albums": [
+      "desert"
+    ],
+    "featured": true,
+    "exif": {
+      "camera": "ACME X2",
+      "lens": "ACME 35mm F1.8",
+      "aperture": "f/5.6",
+      "shutter": "1/500",
+      "iso": 100,
+      "focal": "35mm"
+    },
+    "taken": "2026-04-03T17:30:00"
+  },
+  {
+    "id": "ridge-line",
+    "thumb": "gallery/ridge-line-thumb.webp",
+    "preview": "gallery/ridge-line-preview.webp",
+    "original": "gallery/ridge-line-preview.webp",
+    "width": 3000,
+    "height": 2000,
+    "pw": 1600,
+    "ph": 1067,
+    "caption": "",
+    "tags": [
+      "mountains",
+      "landscape"
+    ],
+    "albums": [
+      "mountains"
+    ],
+    "featured": false,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 24-70mm F2.8",
+      "aperture": "f/11",
+      "shutter": "1/250",
+      "iso": 100,
+      "focal": "50mm"
+    },
+    "taken": "2026-06-15T11:40:21"
+  },
+  {
+    "id": "salt-flat",
+    "thumb": "gallery/salt-flat-thumb.webp",
+    "preview": "gallery/salt-flat-preview.webp",
+    "original": "gallery/salt-flat-preview.webp",
+    "width": 3000,
+    "height": 1500,
+    "pw": 1600,
+    "ph": 800,
+    "caption": "",
+    "tags": [
+      "desert",
+      "landscape"
+    ],
+    "albums": [
+      "desert"
+    ],
+    "featured": false,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 24-70mm F2.8",
+      "aperture": "f/11",
+      "shutter": "1/1000",
+      "iso": 100,
+      "focal": "24mm"
+    },
+    "taken": "2026-04-05T11:00:00"
+  },
+  {
+    "id": "storm-front",
+    "thumb": "gallery/storm-front-thumb.webp",
+    "preview": "gallery/storm-front-preview.webp",
+    "original": "gallery/storm-front-preview.webp",
+    "width": 3000,
+    "height": 2000,
+    "pw": 1600,
+    "ph": 1067,
+    "caption": "",
+    "tags": [
+      "water"
+    ],
+    "albums": [
+      "coast"
+    ],
+    "featured": false,
+    "exif": {
+      "camera": "ACME X2",
+      "lens": "ACME 35mm F1.8",
+      "aperture": "f/4",
+      "shutter": "1/250",
+      "iso": 200,
+      "focal": "35mm"
+    },
+    "taken": "2026-08-14T15:50:00"
+  },
+  {
+    "id": "summit-night",
+    "thumb": "gallery/summit-night-thumb.webp",
+    "preview": "gallery/summit-night-preview.webp",
+    "original": "gallery/summit-night-preview.webp",
+    "width": 3000,
+    "height": 2000,
+    "pw": 1600,
+    "ph": 1067,
+    "caption": "",
+    "tags": [
+      "mountains",
+      "landscape"
+    ],
+    "albums": [
+      "mountains"
+    ],
+    "featured": true,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 24-70mm F2.8",
+      "aperture": "f/2.8",
+      "shutter": "20",
+      "iso": 3200,
+      "focal": "24mm"
+    },
+    "taken": "2026-06-16T23:15:00"
+  },
+  {
+    "id": "valley-mist",
+    "thumb": "gallery/valley-mist-thumb.webp",
+    "preview": "gallery/valley-mist-preview.webp",
+    "original": "gallery/valley-mist-preview.webp",
+    "width": 2000,
+    "height": 3000,
+    "pw": 1067,
+    "ph": 1600,
+    "caption": "",
+    "tags": [
+      "mountains",
+      "landscape"
+    ],
+    "albums": [
+      "mountains"
+    ],
+    "featured": false,
+    "exif": {
+      "camera": "ACME A7",
+      "lens": "ACME 100-400mm F4.5-5.6",
+      "aperture": "f/6.3",
+      "shutter": "1/500",
+      "iso": 400,
+      "focal": "200mm"
+    },
+    "taken": "2026-06-16T07:02:44"
+  }
+]

@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <p>© {{ now.Year }} {{ site.Params.author }}</p>
+</footer>
+{{ with resources.Get "js/gallery.js" }}
+  {{ $opts := dict "minify" true "target" "es2020" "format" "esm" }}
+  {{ $js := . | js.Build $opts | fingerprint }}
+  <script type="module" src="{{ $js.RelPermalink }}"></script>
+{{ end }}

@@ -1,0 +1,10 @@
+{{- /* EXIF summary of a photos.json record as "a · b · c"; empty when none. */ -}}
+{{- $parts := slice -}}
+{{- with .exif -}}
+  {{- with .camera -}}{{- $parts = $parts | append (partialCached "gear-name.html" . .) -}}{{- end -}}
+  {{- with .lens -}}{{- $parts = $parts | append (partialCached "gear-name.html" . .) -}}{{- end -}}
+  {{- range slice .aperture .shutter -}}{{- with . -}}{{- $parts = $parts | append . -}}{{- end -}}{{- end -}}
+  {{- with .iso -}}{{- $parts = $parts | append (printf "ISO %v" .) -}}{{- end -}}
+  {{- with .focal -}}{{- $parts = $parts | append . -}}{{- end -}}
+{{- end -}}
+{{- return (delimit $parts " · ") -}}

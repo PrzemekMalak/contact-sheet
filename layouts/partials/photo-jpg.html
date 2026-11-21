@@ -1,0 +1,8 @@
+{{- /* 1600px preview of a photos.json record as JPG at a stable, hash-free
+       path /p/<id>/<id>.jpg (safe to embed on forums). Returns the resource,
+       or nil when the preview is missing. */ -}}
+{{- $jpg := false -}}
+{{- with resources.Get .preview -}}
+  {{- $jpg = .Process "jpg q85" | resources.Copy (printf "p/%s/%s.jpg" $.id $.id) -}}
+{{- end -}}
+{{- return $jpg -}}

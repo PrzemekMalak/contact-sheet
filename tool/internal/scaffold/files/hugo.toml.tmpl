@@ -1,0 +1,53 @@
+baseURL = {{ toml .BaseURL }}
+locale = "en-us"
+title = {{ toml .Title }}
+{{- if .Module }}
+
+# The theme: https://github.com/PrzemekMalak/contact-sheet
+# Hugo downloads it on the first build and pins the version in go.mod.
+# Update it with: hugo mod get -u
+[module]
+  [[module.imports]]
+    path = {{ toml .ThemeModule }}
+{{- else }}
+
+# The theme: https://github.com/PrzemekMalak/contact-sheet, copied into
+# themes/contact-sheet. Update it with: photo theme update
+theme = "contact-sheet"
+{{- end }}
+
+[params]
+  author = {{ toml .Author }}
+  description = "Photography"
+  # What the homepage shows: "featured" photos, or one album ("album" + homeAlbum).
+  homeMode = "featured"
+  homeAlbum = ""
+
+[menu]
+  [[menu.main]]
+    name = "Albums"
+    pageRef = "/albums"
+    weight = 10
+  [[menu.main]]
+    name = "Featured"
+    pageRef = "/featured"
+    weight = 15
+  [[menu.main]]
+    name = "Gear"
+    pageRef = "/gear"
+    weight = 18
+  [[menu.main]]
+    name = "Blog"
+    pageRef = "/blog"
+    weight = 20
+  [[menu.main]]
+    name = "Tags"
+    pageRef = "/tags"
+    weight = 30
+  [[menu.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 40
+
+[markup.goldmark.renderer]
+  unsafe = true

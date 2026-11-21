@@ -1,0 +1,27 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<div class="albums">
+  {{ range .Pages.ByDate.Reverse }}
+    {{ $count := 0 }}
+    {{ $cover := .Params.cover }}
+    {{ if .Params.unassigned }}
+      {{ $un := slice }}
+      {{ range hugo.Data.photos }}{{ if not .albums }}{{ $un = $un | append . }}{{ end }}{{ end }}
+      {{ $count = len $un }}
+      {{ if and (not $cover) (gt $count 0) }}{{ $cover = (index (sort $un "id" "desc") 0).thumb }}{{ end }}
+    {{ else }}
+      {{ $count = len (where hugo.Data.photos "albums" "intersect" (slice .Params.gallery)) }}
+    {{ end }}
+    {{ if or (not .Params.unassigned) (gt $count 0) }}
+    {{ $title := .Title }}
+    <a class="album-card" href="{{ .RelPermalink }}">
+      {{ with resources.Get $cover }}<img loading="lazy" src="{{ .RelPermalink }}" alt="{{ $title }}">{{ end }}
+      <div class="album-meta">
+        <strong>{{ .Title }}</strong>
+        <span>{{ .Date.Format "2006" }} · {{ $count }} photos</span>
+      </div>
+    </a>
+    {{ end }}
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,12 @@
+{{- /* "N photos · 2024–2026" for a set of photo records; years from `taken`,
+       left out when no photo has a date. */ -}}
+{{- $n := len . -}}
+{{- $out := cond (eq $n 1) "1 photo" (printf "%d photos" $n) -}}
+{{- $years := slice -}}
+{{- range . -}}{{- with .taken -}}{{- $years = $years | append (time .).Year -}}{{- end -}}{{- end -}}
+{{- with $years -}}
+  {{- $years = sort (uniq .) -}}
+  {{- $first := index $years 0 -}}{{- $last := index $years (sub (len $years) 1) -}}
+  {{- $out = printf "%s · %s" $out (cond (eq $first $last) (string $first) (printf "%d–%d" $first $last)) -}}
+{{- end -}}
+{{- return $out -}}

@@ -1,0 +1,17 @@
+[project]
+assets_dir = "assets/gallery"
+photos_index = "data/photos.json"
+albums_dir = "content/albums"
+tags_dir = "content/tags"
+
+[images]
+thumb_max_edge = 400
+preview_max_edge = 1600
+webp_quality = 82
+
+[s3]
+# Empty bucket = local mode: no S3 upload; "original" points at the local preview.
+bucket = ""
+originals_prefix = "originals"
+cdn_base = ""
+region = "us-east-1"

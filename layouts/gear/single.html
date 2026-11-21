@@ -1,0 +1,40 @@
+{{ define "main" }}
+<article class="gear">
+  {{/* exif may be null (photo without EXIF): skip those */}}
+  {{ $withExif := where hugo.Data.photos "exif" "!=" nil }}
+  {{ $type := .Params.gearType }}
+  {{ $nonSlug := "[^a-z0-9]+" }}
+  {{ $photos := slice }}
+  {{ $chips := slice }}
+  {{ if eq $type "combo" }}
+    {{ $photos = where (where $withExif "exif.camera" .Params.camera) "exif.lens" .Params.lens }}
+    {{ range slice (dict "type" "camera" "value" .Params.camera) (dict "type" "lens" "value" .Params.lens) }}
+      {{ $chips = $chips | append (dict "type" .type "name" (partialCached "gear-name.html" .value .value) "slug" (trim (replaceRE $nonSlug "-" (lower .value)) "-") "count" (len (where $withExif (printf "exif.%s" .type) .value))) }}
+    {{ end }}
+  {{ else }}
+    {{ $photos = where $withExif (printf "exif.%s" $type) .Params.gear }}
+    {{/* The other half of each setup this camera (or lens) was used in. */}}
+    {{ $other := cond (eq $type "camera") "lens" "camera" }}
+    {{ $values := slice }}
+    {{ range $photos }}{{ with index .exif $other }}{{ $values = $values | append . }}{{ end }}{{ end }}
+    {{ $gear := .Params.gear }}
+    {{ range uniq $values }}
+      {{ $cam := cond (eq $type "camera") $gear . }}{{ $lens := cond (eq $type "camera") . $gear }}
+      {{ $chips = $chips | append (dict "type" $other "name" (partialCached "gear-name.html" . .) "slug" (trim (replaceRE $nonSlug "-" (lower (print $cam " " $lens))) "-") "count" (len (where $photos (printf "exif.%s" $other) .))) }}
+    {{ end }}
+  {{ end }}
+  <header class="album-header gear-head">
+    <div class="gear-kind">{{ partial "gear-icon.html" $type }}{{ cond (eq $type "combo") "Setup" (cond (eq $type "camera") "Camera" "Lens") }}</div>
+    <h1>{{ partial "gear-title.html" . }}</h1>
+    <p class="gear-meta">{{ partial "gear-meta.html" $photos }}</p>
+    {{ with $chips }}
+    <nav class="gear-chips">
+      {{ range sort (sort . "name") "count" "desc" }}
+      <a class="gear-chip" href="/gear/{{ .slug }}/">{{ partial "gear-icon.html" .type }}{{ .name }} <span class="gear-count">{{ .count }}</span></a>
+      {{ end }}
+    </nav>
+    {{ end }}
+  </header>
+  {{ partial "album-grid.html" (dict "photos" $photos) }}
+</article>
+{{ end }}

@@ -1,0 +1,3 @@
+{{ $id := .Get 0 }}
+{{ $found := where hugo.Data.photos "id" $id }}
+{{ with $found }}{{ partial "photo-grid.html" (dict "photos" .) }}{{ else }}<!-- photo {{ $id }} not found -->{{ end }}

@@ -1,0 +1,10 @@
+{{- /* Inline icon for a gear type: "camera", "lens" or "combo". */ -}}
+<svg class="gear-icon" viewBox="0 0 24 24" aria-hidden="true">
+{{- if eq . "camera" -}}
+<path d="M3 8h3l2-3h8l2 3h3v11H3z"/><circle cx="12" cy="13" r="4"/>
+{{- else if eq . "lens" -}}
+<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>
+{{- else -}}
+<path d="M2 9h2.5l1.5-2.5h6L13.5 9H15v9H2z"/><circle cx="8.5" cy="13.5" r="2.8"/><path d="M15 10.5h4.5a2.5 2.5 0 0 1 2.5 2.5v1.5a2.5 2.5 0 0 1-2.5 2.5H15"/>
+{{- end -}}
+</svg>

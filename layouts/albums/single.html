@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="album">
+  <header class="album-header">
+    <h1>{{ .Title }}</h1>
+    <p class="album-date">{{ .Date.Format "2 January 2006" }}</p>
+    {{ .Content }}
+  </header>
+  {{ $photos := slice }}
+  {{ if .Params.unassigned }}
+    {{ range hugo.Data.photos }}{{ if not .albums }}{{ $photos = $photos | append . }}{{ end }}{{ end }}
+  {{ else }}
+    {{ $photos = where hugo.Data.photos "albums" "intersect" (slice .Params.gallery) }}
+  {{ end }}
+  {{ partial "album-grid.html" (dict "photos" $photos) }}
+</article>
+{{ end }}

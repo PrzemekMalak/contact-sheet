@@ -1,0 +1,21 @@
+# Hugo
+public/
+resources/
+.hugo_build.lock
+**/assets/jsconfig.json
+.DS_Store
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+
+# CDK
+infra/cdk.out/
+
+# photo tool
+dist/
+build/
+tool/photo
+.photo-pending-deletes.json
+.superpowers/

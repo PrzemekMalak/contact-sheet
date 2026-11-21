@@ -1,0 +1,9 @@
+{{- /* Resolve a set of photo records to a grid, newest first.
+       Sorts by capture date (`taken`) when any photo has one, else by `id`. */ -}}
+{{- $photos := .photos -}}
+{{- $showDate := .showDate -}}
+{{- with $photos -}}
+  {{- $dated := where . "taken" "!=" nil -}}
+  {{- $sorted := cond (gt (len $dated) 0) (sort . "taken" "desc") (sort . "id" "desc") -}}
+  {{- partial "photo-grid.html" (dict "photos" $sorted "showDate" $showDate) -}}
+{{- end -}}

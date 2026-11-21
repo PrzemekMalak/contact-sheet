@@ -1,0 +1,14 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ $counts := dict }}
+{{ range hugo.Data.photos }}
+  {{ range .tags }}
+    {{ $counts = merge $counts (dict . (add (default 0 (index $counts .)) 1)) }}
+  {{ end }}
+{{ end }}
+<ul class="tag-cloud">
+  {{ range $tag, $n := $counts }}
+    <li><a href="{{ (printf "/tags/%s/" (urlize $tag)) | relURL }}">{{ $tag }} <span>{{ $n }}</span></a></li>
+  {{ end }}
+</ul>
+{{ end }}

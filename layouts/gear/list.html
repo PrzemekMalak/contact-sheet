@@ -1,0 +1,63 @@
+{{ define "main" }}
+{{/* exif may be null (photo without EXIF): skip those */}}
+{{ $photos := where hugo.Data.photos "exif" "!=" nil }}
+{{ $cams := slice }}{{ $lenses := slice }}{{ $pairs := slice }}
+{{ range $photos }}
+  {{ $c := .exif.camera | default "" }}{{ $l := .exif.lens | default "" }}
+  {{ if $c }}{{ $cams = $cams | append $c }}{{ end }}
+  {{ if $l }}{{ $lenses = $lenses | append $l }}{{ end }}
+  {{ if and $c $l }}{{ $pairs = $pairs | append (dict "camera" $c "lens" $l) }}{{ end }}
+{{ end }}
+
+{{ $nonSlug := "[^a-z0-9]+" }}
+{{ $camRows := slice }}
+{{ range uniq $cams }}
+  {{ $ps := where $photos "exif.camera" . }}
+  {{ $camRows = $camRows | append (dict "name" (partialCached "gear-name.html" . .) "slug" (trim (replaceRE $nonSlug "-" (lower .)) "-") "photos" $ps "count" (len $ps)) }}
+{{ end }}
+
+{{ $lensRows := slice }}
+{{ range uniq $lenses }}
+  {{ $ps := where $photos "exif.lens" . }}
+  {{ $lensRows = $lensRows | append (dict "name" (partialCached "gear-name.html" . .) "slug" (trim (replaceRE $nonSlug "-" (lower .)) "-") "photos" $ps "count" (len $ps)) }}
+{{ end }}
+
+{{ $seen := dict }}
+{{ $comboRows := slice }}
+{{ range $pairs }}
+  {{ $c := .camera }}{{ $l := .lens }}
+  {{ $slug := trim (replaceRE $nonSlug "-" (lower (print $c " " $l))) "-" }}
+  {{ if not (index $seen $slug) }}
+    {{ $seen = merge $seen (dict $slug true) }}
+    {{ $ps := where (where $photos "exif.camera" $c) "exif.lens" $l }}
+    {{ $name := printf "%s + %s" (partialCached "gear-name.html" $c $c) (partialCached "gear-name.html" $l $l) }}
+    {{ $comboRows = $comboRows | append (dict "name" $name "slug" $slug "photos" $ps "count" (len $ps)) }}
+  {{ end }}
+{{ end }}
+
+{{ $sections := slice (dict "title" "Cameras" "type" "camera" "rows" $camRows) (dict "title" "Lenses" "type" "lens" "rows" $lensRows) (dict "title" "Setups" "type" "combo" "rows" $comboRows) }}
+
+<header class="album-header"><h1>{{ .Title }}</h1></header>
+{{ range $sections }}
+  {{ $type := .type }}
+  {{ $rows := sort (sort .rows "name") "count" "desc" }}
+  {{ if $rows }}
+  <section class="gear-index">
+    <h2>{{ partial "gear-icon.html" $type }}{{ .title }}</h2>
+    <ul class="gear-list">
+      {{ range $rows }}
+      {{ $dated := slice }}{{ range .photos }}{{ if .taken }}{{ $dated = $dated | append . }}{{ end }}{{ end }}
+      {{ $newest := index (cond (gt (len $dated) 0) (sort $dated "taken" "desc") (sort .photos "id" "desc")) 0 }}
+      <li><a class="gear-row" href="/gear/{{ .slug }}/">
+        {{ with resources.Get $newest.thumb }}<img class="gear-thumb" loading="lazy" src="{{ .RelPermalink }}" alt="">{{ end }}
+        <span class="gear-text">
+          <span class="gear-name">{{ partial "gear-icon.html" $type }}{{ .name }}</span>
+          <span class="gear-meta">{{ partial "gear-meta.html" .photos }}</span>
+        </span>
+      </a></li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+{{ end }}
+{{ end }}

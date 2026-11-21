@@ -1,0 +1,6 @@
+{{ define "main" }}
+{{ $tag := .Params.tag }}
+<h1>#{{ $tag }}</h1>
+{{ $photos := where hugo.Data.photos "tags" "intersect" (slice $tag) }}
+{{ with $photos }}{{ partial "photo-grid.html" (dict "photos" .) }}{{ else }}<p>No photos.</p>{{ end }}
+{{ end }}

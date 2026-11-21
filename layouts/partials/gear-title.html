@@ -1,0 +1,7 @@
+{{- /* Display title of a gear page. A camera + lens setup is always named after
+       its camera and lens, so renaming either one renames the setup too. */ -}}
+{{- $title := .Title -}}
+{{- if eq .Params.gearType "combo" -}}
+  {{- $title = printf "%s + %s" (partialCached "gear-name.html" .Params.camera .Params.camera) (partialCached "gear-name.html" .Params.lens .Params.lens) -}}
+{{- end -}}
+{{- return $title -}}

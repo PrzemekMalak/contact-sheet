@@ -1,0 +1,19 @@
+{{/* One page per photo at /p/<id>/, built from data/photos.json.
+     build.list=local keeps them out of RSS and site-wide lists; render must
+     be set explicitly once a build map is given. */}}
+{{- range $p := hugo.Data.photos -}}
+  {{- $title := $p.caption -}}
+  {{- if not $title -}}
+    {{- $title = $p.id -}}
+    {{- with $p.taken -}}{{- $title = (time .).Format "2 January 2006" -}}{{- end -}}
+  {{- end -}}
+  {{- $page := dict
+      "path" $p.id
+      "kind" "page"
+      "title" $title
+      "params" (dict "photo" $p)
+      "build" (dict "list" "local" "render" "always")
+  -}}
+  {{- with $p.taken -}}{{- $page = merge $page (dict "dates" (dict "date" (time .))) -}}{{- end -}}
+  {{- $.AddPage $page -}}
+{{- end -}}
